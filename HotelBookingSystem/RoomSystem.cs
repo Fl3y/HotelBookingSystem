@@ -12,13 +12,14 @@ namespace HotelBookingSystem
         string conStr = @"Server=127.0.0.1;userid=root;database=hotelsystem";
         string decider;
         string approved;
+        string name;
         Random random = new Random();
         List<int> pickedRooms = new List<int>();
 
-        public RoomSystem() 
+        public RoomSystem(string _name) 
         {
-            PickRoom();
-            
+            name = _name;
+            PickRoom();  
         }
 
         public void PickRoom()
@@ -49,15 +50,15 @@ namespace HotelBookingSystem
 
                 if(approved == "y")
                 {
-                    
-                    sql = $"UPDATE rooms SET isOccupied=true WHERE ZimmerNr={pickedRooms[index]}";
+
+                    sql = $"UPDATE rooms SET isOccupied=true, occupiedBy='{name}' WHERE ZimmerNr={pickedRooms[index]};";
                     using var cmd2 = new MySqlCommand(sql, con);
                     using MySqlDataReader rdr2 = cmd2.ExecuteReader();
                     while (rdr2.Read())
                     {
                         if(rdr.GetInt32(5) == pickedRooms[index])
                         {
-                            Console.WriteLine("Your Book has been created");
+                            Console.WriteLine("Your order has been created");
                         }
                     }
                 }

@@ -5,7 +5,7 @@
     {
         public static void Main(string[] args)
         {
-            RoomSystem rs = new RoomSystem();
+            RoomSystem rs = new RoomSystem("Mustermnann");
 
         }
     }

@@ -8,6 +8,9 @@ namespace HotelBookingSystem
 {
     internal class BookingData
     {
-        public BookingData() { }
+        public BookingData() 
+        {
+
+        }
     }
 }

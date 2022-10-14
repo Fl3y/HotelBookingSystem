@@ -82,7 +82,7 @@ namespace HotelBookingSystem
 
         public void BookRoom(string bookerName)
         {
-            new RoomSystem();
+            new RoomSystem(lastName);
         }
 
     }
