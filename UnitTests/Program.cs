@@ -6,6 +6,7 @@
         public static void Main(string[] args)
         {
             RoomSystem rs = new RoomSystem("Mustermnann");
+            BookingData data = new BookingData();
 
         }
     }

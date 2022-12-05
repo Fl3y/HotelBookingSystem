@@ -31,7 +31,7 @@ namespace HotelBookingSystem
             using MySqlDataReader rdr = cmd.ExecuteReader();
             rdr.Read();
             
-            if(rdr.GetString(4).Contains(userName) && rdr.GetString(5).Contains(passWord) &&userName != null && passWord != null){
+            if(rdr.GetString(4).Contains(userName) && rdr.GetString(5).Contains(passWord) && userName != null && passWord != null){
                 Console.WriteLine($"Welcome {userName}");
                 con.Close();
                 new HotelPanel();
